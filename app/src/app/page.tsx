@@ -2,6 +2,7 @@ import { ShadCnNavigationMenuDesktop } from "@/app/ShadCnNavigationMenuDesktop"
 import { ShadCnNavigationMenuMobile } from "./ShadCnNavigationMenuMobile";
 import './globals.css'
 import './animations.css'
+import Image from 'next/image'
 
 
 export default function Home() {
@@ -26,7 +27,12 @@ export default function Home() {
 
         <div className="fade-up-fast">
           <p className="my-4">
-            Hello 👋🏻 My name is <b>Evan Kinsey</b>!
+            Hello 👋🏻 My name is <b>Evan Kinsey</b> <Image 
+              src="/evan-kinsey-img.PNG" alt="Evan Kinsey"       
+              width={100}
+              height={100}
+              className="inline-block w-8 h-8 rounded-full mr-2" 
+              />
           </p>
 
           <p className="my-4">
