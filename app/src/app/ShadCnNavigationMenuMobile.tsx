@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import Link from "next/link"
 import { Bars3Icon } from '@heroicons/react/24/outline';
 
 import { cn } from "@/lib/utils"
@@ -26,32 +27,32 @@ export function ShadCnNavigationMenuMobile() {
 
             <li>
               <NavigationMenuLink as-child>
-                <a
+                <Link
                   href="/"
                   className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                 >
                   <div className="text-sm font-medium leading-none">Home</div>
-                </a>
+                </Link>
               </NavigationMenuLink>
             </li>
             <li>
               <NavigationMenuLink as-child>
-                <a
+                <Link
                   href="/experience"
                   className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                 >
                   <div className="text-sm font-medium leading-none">Experience</div>
-                </a>
+                </Link>
               </NavigationMenuLink>
             </li>
             <li>
               <NavigationMenuLink as-child>
-                <a
+                <Link
                   href="/about"
                   className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                 >
                   <div className="text-sm font-medium leading-none">About Me</div>
-                </a>
+                </Link>
               </NavigationMenuLink>
             </li>
           </ul>
