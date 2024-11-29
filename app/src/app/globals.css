@@ -2,4 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+h1 {
+  @apply font-bold text-3xl md:text-4xl font-inter;
+}
+
+h2 {
+  @apply text-4xl md:text-5xl font-inter;
+}
+
+p {
+  @apply text-base md:text-xl;
+}
 
