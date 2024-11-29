@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply font-inter ;
+  @apply font-inter bg-slate-50;
 }
 
 h1 {

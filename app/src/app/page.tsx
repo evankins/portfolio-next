@@ -1,4 +1,5 @@
-import { ShadCnNavigationMenu } from "@/app/ShadCnNavigationMenu"
+import { ShadCnNavigationMenuDesktop } from "@/app/ShadCnNavigationMenuDesktop"
+import { ShadCnNavigationMenuMobile } from "./ShadCnNavigationMenuMobile";
 import './globals.css'
 
 
@@ -6,8 +7,12 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center"> 
       <div className="flex-grow mt-4 relative w-11/12 md:w-7/12">   
-        <div className="absolute top-0 right-0">
-          <ShadCnNavigationMenu />
+        <div className="absolute top-0 right-0 hidden sm:block">
+          <ShadCnNavigationMenuDesktop />
+        </div>
+
+        <div className="absolute top-0 right-0 block sm:hidden">
+          <ShadCnNavigationMenuMobile />
         </div>
 
         <div className="inline-block mt-2">
