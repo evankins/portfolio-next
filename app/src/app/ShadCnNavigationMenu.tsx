@@ -52,21 +52,28 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ]
 
-export function NavigationMenuDemo() {
+export function ShadCnNavigationMenu() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        <NavigationMenuItem>
-          <Link href="/projects" legacyBehavior passHref>
+        <NavigationMenuItem className="hover:bg-slate-100 transition duration-300 rounded-md">
+          <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Projects
+              Home
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/docs" legacyBehavior passHref>
+        <NavigationMenuItem className="hover:bg-slate-100 transition duration-300 rounded-md">
+          <Link href="/experience" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Documentation
+              Experience
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem className="hover:bg-slate-100 transition duration-300 rounded-md">
+          <Link href="/about-me" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              About Me
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>

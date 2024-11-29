@@ -2,15 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply font-inter ;
+}
+
 h1 {
-  @apply font-bold text-3xl md:text-4xl font-inter;
+  @apply font-bold text-3xl md:text-4xl;
 }
 
 h2 {
-  @apply text-4xl md:text-5xl font-inter;
+  @apply font-bold text-4xl md:text-5xl font-inter;
 }
 
 p {
   @apply text-base md:text-xl;
+}
+
+a.link {
+  @apply text-blue-500 hover:text-blue-700 underline;
 }
 
