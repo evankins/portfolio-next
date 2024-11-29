@@ -1,5 +1,5 @@
-import '@/app/globals.css'
-import '@/app/animations.css'
+import "@/styles/globals.css";
+import "@/styles/animations.css";
 
 
 export default function About() {

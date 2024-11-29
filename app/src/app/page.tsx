@@ -1,5 +1,5 @@
-import './globals.css'
-import './animations.css'
+import "@/styles/globals.css";
+import "@/styles/animations.css";
 import Image from 'next/image'
 import Link from 'next/link'
 

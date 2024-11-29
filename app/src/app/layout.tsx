@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Head from "next/head";
-import "./globals.css";
-import "./animations.css";
-import { ShadCnNavigationMenuDesktop } from "@/app/ShadCnNavigationMenuDesktop"
-import { ShadCnNavigationMenuMobile } from "./ShadCnNavigationMenuMobile";
+import "@/styles/globals.css";
+import "@/styles/animations.css";
+import { ShadCnNavigationMenuDesktop } from "@/components/ShadCnNavigationMenuDesktop"
+import { ShadCnNavigationMenuMobile } from "@/components/ShadCnNavigationMenuMobile";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
