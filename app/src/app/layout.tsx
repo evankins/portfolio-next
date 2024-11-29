@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Head from "next/head";
 import "./globals.css";
+import "./animations.css";
+import { ShadCnNavigationMenuDesktop } from "@/app/ShadCnNavigationMenuDesktop"
+import { ShadCnNavigationMenuMobile } from "./ShadCnNavigationMenuMobile";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,6 +34,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className="h-0 flex flex-col justify-center items-center"> 
+          <div className="flex-grow mt-4 relative w-11/12 md:w-[700px] lg:w-[800px] move-down-fast"> 
+            <div className="absolute top-0 right-0 hidden md:block">
+              <ShadCnNavigationMenuDesktop />
+            </div>
+
+            <div className="absolute top-0 right-0 block md:hidden">
+              <ShadCnNavigationMenuMobile />
+            </div>
+          </div>
+        </div>
+
+
         {children}
       </body>
     </html>

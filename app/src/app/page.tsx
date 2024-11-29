@@ -1,23 +1,15 @@
-import { ShadCnNavigationMenuDesktop } from "@/app/ShadCnNavigationMenuDesktop"
-import { ShadCnNavigationMenuMobile } from "./ShadCnNavigationMenuMobile";
 import './globals.css'
 import './animations.css'
 import Image from 'next/image'
+import Link from 'next/link'
 
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center"> 
-      <div className="flex-grow mt-4 relative w-11/12 md:w-[700px] lg:w-[800px]">   
+      <div className="mt-4 flex-grow relative w-11/12 md:w-[700px] lg:w-[800px]">   
 
         <header className="move-down-fast">
-          <div className="absolute top-0 right-0 hidden md:block">
-            <ShadCnNavigationMenuDesktop />
-          </div>
-
-          <div className="absolute top-0 right-0 block md:hidden">
-            <ShadCnNavigationMenuMobile />
-          </div>
 
           <div className="inline-block mt-2">
             <h1 className="">Welcome!</h1>
@@ -74,13 +66,13 @@ export default function Home() {
             To see my skills and completed projects, you can head to my <a href="/experience" className="link">Experience</a> page.
           </p>
 
-          <footer className="mt-8 flex flex-col justify-center items-center">
-            <p className="text-sm bottom-2">
-              © 2024 / Evan Kinsey / <a href="/credits" className="link">Credits</a>
-            </p>
-          </footer>
-
         </div>
+
+        <footer className="fade-in-slow mt-8 flex flex-col justify-center items-center">
+            <p className="text-sm absolute bottom-2">
+              © 2024 / Evan Kinsey / <Link href="/credits" className="link">Credits</Link>
+            </p>
+        </footer>
 
       </div>
     </div>

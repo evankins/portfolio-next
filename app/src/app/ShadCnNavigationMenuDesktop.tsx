@@ -13,25 +13,26 @@ import {
 } from "@/components/ui/navigation-menu"
 
 export function ShadCnNavigationMenuDesktop() {
+  
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        <NavigationMenuItem className="hover:bg-slate-100 transition duration-300 rounded-md">
+        <NavigationMenuItem className="hover:bg-slate-200 transition duration-300 rounded-md">
           <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Home
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        <NavigationMenuItem className="hover:bg-slate-100 transition duration-300 rounded-md">
+        <NavigationMenuItem className="hover:bg-slate-200 transition duration-300 rounded-md">
           <Link href="/experience" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Experience
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        <NavigationMenuItem className="hover:bg-slate-100 transition duration-300 rounded-md">
-          <Link href="/about-me" legacyBehavior passHref>
+        <NavigationMenuItem className="hover:bg-slate-200 transition duration-300 rounded-md">
+          <Link href="/about" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               About Me
             </NavigationMenuLink>
