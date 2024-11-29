@@ -1,0 +1,35 @@
+@keyframes move-down {
+    0% { 
+        transform: translateY(-60px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes fade-up {
+    0% { 
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    50% { 
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.move-down-fast {
+    animation: 1s move-down ease-out;
+}
+
+.fade-up-fast {
+    animation: 2.5s fade-up;
+}
+
+.fade-up-slow {
+    animation: 5s fade-up;
+}
