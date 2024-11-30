@@ -59,7 +59,7 @@ export default function Home() {
           </p>
 
           <p className="my-8">
-            To read more about me and my work ethic, you can head to my <a href="/about-me" className="link">About Me</a> page.
+            To read more about me and my work ethic, you can head to my <a href="/about" className="link">About Me</a> page.
           </p>
 
           <p className="my-8">
