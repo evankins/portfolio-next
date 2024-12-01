@@ -9,9 +9,13 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
-export function FilterSelect() {
+interface FilterSelectProps {
+    onChange: (filter: string) => void,
+  }
+
+export function FilterSelect({ onChange }: FilterSelectProps) {
   return (
-    <Select defaultValue="All">
+    <Select onValueChange={onChange} defaultValue="All">
       <SelectTrigger className="w-[180px]">
         <SelectValue defaultValue="All"/>
       </SelectTrigger>

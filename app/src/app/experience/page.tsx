@@ -178,15 +178,33 @@ const skills: { name: string; src?: string; type: string; color?: string }[] = [
 
 
 export default function Experience() {
-  //const [filteredSkill, setFilteredSkill] = React.useState<string | null>(null);
   const [selectedSkill, setSelectedSkill] = React.useState<string | null>(null);
+  const [filteredSkill, setFilteredSkill] = React.useState<string | null>(null);
+  const [filteredProjects, setFilteredProjects] = React.useState(projects);
+  const [filteredSkills, setFilteredSkills] = React.useState(skills);
 
   const handleSkillClick = (skill: string) => {
     setSelectedSkill(skill);
   };
 
-  const filteredProjects = selectedSkill 
-    ? projects.filter(project => project.skills.includes(selectedSkill)) : projects;
+  const handleFilterSelect = (filter: string) => {
+    setFilteredSkill(filter);
+  };
+
+  React.useEffect(() => {
+    const newFilteredProjects = selectedSkill 
+      ? projects.filter(project => project.skills.includes(selectedSkill)) 
+      : projects;
+    setFilteredProjects(newFilteredProjects);
+  }, [selectedSkill]);
+
+  React.useEffect(() => {
+    const newFilteredSkills =
+      filteredSkill && filteredSkill !== "All"
+        ? skills.filter((skill) => skill.type === filteredSkill)
+        : skills;
+    setFilteredSkills(newFilteredSkills);
+  }, [filteredSkill]);
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center"> 
@@ -212,14 +230,14 @@ export default function Experience() {
             Filter:
           </p>
 
-          <FilterSelect />
+          <FilterSelect onChange={handleFilterSelect} />
 
           <ul className="my-4 flex flex-wrap md:w-[800px]">
             {
-              skills.map((skill) => (
+              filteredSkills.map((skill) => (
                 <Button 
                   key={skill.name}
-                  className="bg-slate-50 text-sm hover:bg-slate-200 transition duration-300 rounded-md"
+                  className="bg-white shadow-md m-1 text-sm hover:bg-slate-200 transition duration-300 rounded-md"
                   onClick={() => handleSkillClick(skill.name)}
                 >
                   {skill.src && <Image src={skill.src} alt={skill.name + " logo"} width={18} height={18} />}
