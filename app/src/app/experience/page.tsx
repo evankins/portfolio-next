@@ -15,35 +15,20 @@ const colors = [
   "bg-green-500"
 ]
 
-const projects: { title: string; src: string; skills: string[] }[] = [
-  {
-    title: "An Enterprise Scale system for a K-12 school district",
-    src: "/150.svg",
-    skills: ["MongoDB", "Express", "React", "Node.js", "JavaScript", "Linux", "NoSQL", "Apache", "Ubuntu", "Git", "Integration", "Deployment"]
-  },
-  {
-    title: "A charity website that funded villains; used by donators, villains, and managers",
-    src: "/150.svg",
-    skills: ["Angular", "TypeScript", "Spring Boot", "Java", "Node.js", "JaCoCo", "SonarQube", "Docker", "Trello", "Git"]
-  },
-  {
-    title: "A back-end system to store Dungeons & Dragons characters",
-    src: "/150.svg",
-    skills: ["Python", "PostgreSQL", "SQL", "Flask", "Flask-RESTful", "Github Actions (CI)", "Git"]
-  },
-  {
-    title: "A Comic book database application that employed a multitude of software design patterns",
-    src: "/150.svg",
-    skills: ["Java", "PostgreSQL", "SQL", "Trello", "Git", "Design Patterns"]
-  },
-  {
-    title: "Wawa wiwa",
-    src: "/150.svg",
-    skills: ["Java", "PostgreSQL", "SQL", "Trello", "Git", "Design Patterns"]
-  },
-]
+export interface Skill {
+  name: string;
+  src?: string;
+  type: string;
+  color?: string;
+}
 
-const skills: { name: string; src?: string; type: string; color?: string }[] = [
+interface Project {
+  title: string;
+  src: string;
+  skills: Skill[];
+}
+
+const skills: Skill[] = [
   {
     name: "MongoDB",
     src: "/18.svg",
@@ -135,6 +120,11 @@ const skills: { name: string; src?: string; type: string; color?: string }[] = [
     type: "Other",
   },
   {
+    name: "Docker",
+    src: "/18.svg",
+    type: "Other",
+  },
+  {
     name: "Trello",
     src: "/18.svg",
     type: "Other",
@@ -176,6 +166,34 @@ const skills: { name: string; src?: string; type: string; color?: string }[] = [
   },
 ]
 
+const skillMap: { [name: string]: Skill } = Object.fromEntries(
+  skills.map((skill) => [skill.name, skill])
+);
+
+
+const projects: Project[] = [
+  {
+    title: "An Enterprise Scale system for a K-12 school district",
+    src: "/150.svg",
+    skills: ["MongoDB", "Express", "React", "Node.js", "JavaScript", "Linux", "NoSQL", "Apache", "Ubuntu", "Git", "Integration", "Deployment"].map((name) => skillMap[name]),
+  },
+  {
+    title: "A charity website that funded villains; used by donators, villains, and managers",
+    src: "/150.svg",
+    skills: ["Angular", "TypeScript", "Spring Boot", "Java", "Node.js", "JaCoCo", "SonarQube", "Docker", "Trello", "Git"].map((name) => skillMap[name]),
+  },
+  {
+    title: "A back-end system to store Dungeons & Dragons characters",
+    src: "/150.svg",
+    skills: ["Python", "PostgreSQL", "SQL", "Flask", "Flask-RESTful", "Github Actions (CI)", "Git"].map((name) => skillMap[name]),
+  },
+  {
+    title: "A Comic book database application that employed a multitude of software design patterns",
+    src: "/150.svg",
+    skills: ["Java", "PostgreSQL", "SQL", "Trello", "Git", "Design Patterns"].map((name) => skillMap[name]),
+  },
+]
+
 
 export default function Experience() {
   const [selectedSkill, setSelectedSkill] = React.useState<string | null>(null);
@@ -193,8 +211,8 @@ export default function Experience() {
   };
 
   React.useEffect(() => {
-    const newFilteredProjects = selectedSkill 
-      ? projects.filter(project => project.skills.includes(selectedSkill)) 
+    const newFilteredProjects = selectedSkill && selectedSkill !== null
+      ? projects.filter(project => project.skills.some(skill => skill.name === selectedSkill)) 
       : projects;
     setFilteredProjects(newFilteredProjects);
   }, [selectedSkill]);
@@ -258,6 +276,7 @@ export default function Experience() {
                 color={(colors[index % colors.length])}
                 title={project.title}
                 src={project.src}
+                skills={project.skills}
                 />
               ))}
           </ul>
