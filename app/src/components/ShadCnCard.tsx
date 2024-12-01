@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import Image from 'next/image'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { Skill } from "@/app/experience/page";
 
@@ -26,7 +26,7 @@ export function ProjectCard({ title, color, src, skills }: ProjectCardProps) {
                                 }
                             >
                                 {skill.src && <Image src={skill.src} alt={skill.name + " logo"} width={18} height={18} />}
-                                {!skill.src && <p className="text-sm text-slate-50">{skill.name}</p>}
+                                {!skill.src && <p className="mx-1 text-sm text-slate-50">{skill.name}</p>}
                             </TooltipTrigger>
                             {skill.src &&
                                 <TooltipContent className="bg-white text-sm">
