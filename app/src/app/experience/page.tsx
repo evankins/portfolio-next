@@ -97,12 +97,12 @@ const skills: { name: string; src?: string; type: string; color?: string }[] = [
   {
     name: "Integration",
     type: "Keyword",
-    color: "text-blue-700"
+    color: "bg-blue-700"
   },
   {
     name: "Deployment",
     type: "Keyword",
-    color: "text-green-700"
+    color: "bg-green-700"
   },
   {
     name: "Angular",
@@ -172,7 +172,7 @@ const skills: { name: string; src?: string; type: string; color?: string }[] = [
   {
     name: "Design Patterns",
     type: "Keyword",
-    color: "text-blue-700"
+    color: "bg-blue-700"
   },
 ]
 
@@ -189,6 +189,7 @@ export default function Experience() {
 
   const handleFilterSelect = (filter: string) => {
     setFilteredSkill(filter);
+    setSelectedSkill(null);
   };
 
   React.useEffect(() => {
@@ -237,7 +238,10 @@ export default function Experience() {
               filteredSkills.map((skill) => (
                 <Button 
                   key={skill.name}
-                  className="bg-white shadow-md m-1 text-sm hover:bg-slate-200 transition duration-300 rounded-md"
+                  className={
+                    "bg-white shadow-md m-1 text-sm hover:bg-slate-200 transition duration-300 rounded-md" 
+                    + (skill.name === selectedSkill ? " bg-slate-200" : "")
+                  }
                   onClick={() => handleSkillClick(skill.name)}
                 >
                   {skill.src && <Image src={skill.src} alt={skill.name + " logo"} width={18} height={18} />}
