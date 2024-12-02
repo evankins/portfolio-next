@@ -16,10 +16,10 @@ interface FilterSelectProps {
 export function FilterSelect({ onChange }: FilterSelectProps) {
   return (
     <Select onValueChange={onChange} defaultValue="All">
-      <SelectTrigger className="w-[180px]">
+      <SelectTrigger className="w-[180px] bg-white">
         <SelectValue defaultValue="All"/>
       </SelectTrigger>
-      <SelectContent className="bg-slate-50">
+      <SelectContent className="bg-white">
         <SelectGroup>
           <SelectItem value="All" className="hover:bg-slate-200 transition duration-300 rounded-md"><p>All</p></SelectItem>
           <SelectItem value="Language" className="hover:bg-slate-200 transition duration-300 rounded-md"><p>Language</p></SelectItem>

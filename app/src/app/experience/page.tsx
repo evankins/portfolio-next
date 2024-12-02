@@ -171,7 +171,7 @@ const projects: Project[] = [
   {
     title: "A Comic book database application that employed a multitude of software design patterns",
     src: "/comix.png",
-    skills: ["Java", "PostgreSQL", "SQL", "Trello", "Git"].map((name) => skillMap[name]),
+    skills: ["Java", "PostgreSQL", "SQL", "SonarQube", "Trello", "Git"].map((name) => skillMap[name]),
   },
 ]
 
