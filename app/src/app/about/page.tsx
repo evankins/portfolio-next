@@ -1,6 +1,8 @@
 import "@/styles/globals.css";
 import "@/styles/animations.css";
 
+import Link from 'next/link'
+
 
 export default function About() {
   return (
@@ -20,7 +22,11 @@ export default function About() {
           </p>
         </div>
 
-
+        <footer className="mt-12 flex flex-col justify-center items-center">
+            <p className="text-sm absolute bottom-2">
+              © 2024 / Evan Kinsey / <Link href="/credits" className="link">Credits</Link>
+            </p>
+        </footer>
 
       </div>
     </div>   

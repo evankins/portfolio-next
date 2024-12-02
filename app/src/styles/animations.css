@@ -38,6 +38,10 @@
     animation: 1s move-down ease-out;
 }
 
+.fade-up-load {
+    animation: 1s fade-up;
+}
+
 .fade-up-fast {
     animation: 2.5s fade-up;
 }

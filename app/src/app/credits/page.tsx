@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import "@/styles/animations.css";
+import Link from "next/link";
 
 
 export default function Credits() {
@@ -15,11 +16,16 @@ export default function Credits() {
         </header>
 
         <div>
-          <p className="my-4">
-            Credits page in progress!
+          <p className="my-4 text-sm">
+            You can download or view the credits document here: <Link className="link" href="https://docs.google.com/document/d/1yugqlkTeK1zBSXoIZg9V8M21ysLVpSM0OXEmoN_hD0w/edit?usp=sharing">Portfolio Credits</Link>
           </p>
         </div>
 
+        <footer className="mt-12 flex flex-col justify-center items-center">
+            <p className="text-sm absolute bottom-2">
+              © 2024 / Evan Kinsey / <Link href="/credits" className="link">Credits</Link>
+            </p>
+        </footer>
       </div>
     </div>   
   );
