@@ -21,11 +21,12 @@ export function ProjectCard({ title, color, src, skills }: ProjectCardProps) {
                     <TooltipProvider key={index} >
                         <Tooltip>
                             <TooltipTrigger 
-                                className={"m-1 rounded-md p-1"
+                                className={"m-1 rounded-md p-1 h-[26px]"
                                     + (skill.color ? " " + skill.color : " bg-white")
+                                    + (skill.src ? " w-[26px]" : "")
                                 }
                             >
-                                {skill.src && <Image src={skill.src} alt={skill.name + " logo"} width={18} height={18} />}
+                                {skill.src && <Image src={skill.src} alt={skill.name + " logo"} height={18} width={18} />}
                                 {!skill.src && <p className="mx-1 text-sm text-slate-50">{skill.name}</p>}
                             </TooltipTrigger>
                             {skill.src &&

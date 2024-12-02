@@ -31,52 +31,52 @@ interface Project {
 const skills: Skill[] = [
   {
     name: "MongoDB",
-    src: "/18.svg",
+    src: "/mongodb-icon.svg",
     type: "Database"
   },
   {
     name: "Express",
-    src: "/18.svg",
+    src: "/express.svg",
     type: "Framework"
   },
   {
     name: "React",
-    src: "/18.svg",
+    src: "/React-icon.svg",
     type: "Framework"
   },
   {
     name: "Node.js",
-    src: "/18.svg",
+    src: "/nodejs.svg",
     type: "Framework"
   },
   {
     name: "JavaScript",
-    src: "/18.svg",
+    src: "/Unofficial_JavaScript_logo_2.svg",
     type: "Language"
   },
   {
     name: "Linux",
-    src: "/18.svg",
+    src: "/NewTux.svg",
     type: "Other"
   },
   {
     name: "NoSQL",
-    src: "/18.svg",
-    type: "Database"
+    type: "Database",
+    color: "bg-black"
   },
   {
     name: "Apache",
-    src: "/18.svg",
+    src: "/Apache_HTTP_Server_Logo_(2016).svg",
     type: "Other"
   },
   {
     name: "Ubuntu",
-    src: "/18.svg",
+    src: "/Ubuntu-logo-no-wordmark-solid-o-2022.svg",
     type: "Other"
   },
   {
     name: "Git",
-    src: "/18.svg",
+    src: "/git-logo.svg",
     type: "Other"
   },
   {
@@ -91,72 +91,67 @@ const skills: Skill[] = [
   },
   {
     name: "Angular",
-    src: "/18.svg",
+    src: "/Angular_full_color_logo.svg",
     type: "Framework"
   },
   {
     name: "TypeScript",
-    src: "/18.svg",
+    src: "/Typescript_logo_2020.svg",
     type: "Language",
   },
   {
     name: "Spring Boot",
-    src: "/18.svg",
+    src: "/Spring_Boot.svg",
     type: "Framework",
   },
   {
     name: "Java",
-    src: "/18.svg",
+    src: "/Coffee-2346113_in_blue.svg",
     type: "Language",
   },
   {
     name: "JaCoCo",
-    src: "/18.svg",
+    src: "/jacoco.svg",
     type: "Other",
   },
   {
     name: "SonarQube",
-    src: "/18.svg",
+    src: "/sonarqube.svg",
     type: "Other",
   },
   {
     name: "Docker",
-    src: "/18.svg",
+    src: "/Docker-svgrepo-com.svg",
     type: "Other",
   },
   {
     name: "Trello",
-    src: "/18.svg",
+    src: "/trello.svg",
     type: "Other",
   },
   {
     name: "Python",
-    src: "/18.svg",
+    src: "/Python_logo_01.svg",
     type: "Language",
   },
   {
     name: "PostgreSQL",
-    src: "/18.svg",
+    src: "/Postgresql_elephant.svg",
     type: "Database",
   },
   {
     name: "SQL",
-    src: "/18.svg",
     type: "Database",
+    color: "bg-black"
   },
   {
     name: "Flask",
-    src: "/18.svg",
-    type: "Other",
-  },
-  {
-    name: "Flask-RESTful",
-    src: "/18.svg",
+    src: "/flask.svg",
     type: "Other",
   },
   {
     name: "Github Actions (CI)",
-    src: "/18.svg",
+    src: "/Octicons-mark-github.svg",
     type: "Other",
   },
   {
@@ -185,7 +180,7 @@ const projects: Project[] = [
   {
     title: "A back-end system to store Dungeons & Dragons characters",
     src: "/150.svg",
-    skills: ["Python", "PostgreSQL", "SQL", "Flask", "Flask-RESTful", "Github Actions (CI)", "Git"].map((name) => skillMap[name]),
+    skills: ["Python", "PostgreSQL", "SQL", "Flask", "Github Actions (CI)", "Git"].map((name) => skillMap[name]),
   },
   {
     title: "A Comic book database application that employed a multitude of software design patterns",
@@ -262,7 +257,7 @@ export default function Experience() {
                   }
                   onClick={() => handleSkillClick(skill.name)}
                 >
-                  {skill.src && <Image src={skill.src} alt={skill.name + " logo"} width={18} height={18} />}
+                  {skill.src && <Image src={skill.src} alt={skill.name + " logo"} width={20} height={20} />}
                   {skill.name}
                 </Button>
               ))
