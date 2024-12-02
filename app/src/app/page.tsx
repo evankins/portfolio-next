@@ -73,9 +73,7 @@ export default function Home() {
               © 2024 / Evan Kinsey / <Link href="/credits" className="link">Credits</Link>
             </p>
         </footer>
-
       </div>
     </div>
-
   );
 }

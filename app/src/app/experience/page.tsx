@@ -6,6 +6,7 @@ import { FilterSelect } from "@/components/ShadCnSelect";
 import { ProjectCard } from "@/components/ShadCnCard";
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
+import Link from 'next/link';
 import * as React from "react";
 
 const colors = [
@@ -273,7 +274,12 @@ export default function Experience() {
           </ul>
 
         </div>
-
+        
+        <footer className="mt-8 flex flex-col justify-center items-center">
+            <p className="text-sm absolute bottom-2">
+              © 2024 / Evan Kinsey / <Link href="/credits" className="link">Credits</Link>
+            </p>
+        </footer>
       </div>
     </div>   
   );
