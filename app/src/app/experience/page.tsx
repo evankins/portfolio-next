@@ -277,7 +277,7 @@ export default function Experience() {
         
         <footer className="mt-12 flex flex-col justify-center items-center">
             <p className="text-sm absolute bottom-2">
-              © 2024 / Evan Kinsey / <Link href="/credits" className="link">Credits</Link>
+              © 2024 / Evan Kinsey / <Link href="https://github.com/evankins" className="link">GitHub</Link> / <Link href="https://www.linkedin.com/in/evan-kinsey/" className="link">LinkedIn</Link> / <Link href="/credits" className="link">Credits</Link>
             </p>
         </footer>
       </div>

@@ -16,14 +16,14 @@ export default function Credits() {
         </header>
 
         <div>
-          <p className="my-4 text-sm">
+          <p className="my-4">
             You can download or view the credits document here: <Link className="link" href="https://docs.google.com/document/d/1yugqlkTeK1zBSXoIZg9V8M21ysLVpSM0OXEmoN_hD0w/edit?usp=sharing">Portfolio Credits</Link>
           </p>
         </div>
 
         <footer className="mt-12 flex flex-col justify-center items-center">
             <p className="text-sm absolute bottom-2">
-              © 2024 / Evan Kinsey / <Link href="/credits" className="link">Credits</Link>
+              © 2024 / Evan Kinsey / <Link href="https://github.com/evankins" className="link">GitHub</Link> / <Link href="https://www.linkedin.com/in/evan-kinsey/" className="link">LinkedIn</Link> / <Link href="/credits" className="link">Credits</Link>
             </p>
         </footer>
       </div>
