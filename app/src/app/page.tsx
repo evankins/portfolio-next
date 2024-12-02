@@ -68,7 +68,7 @@ export default function Home() {
 
         </div>
 
-        <footer className="fade-in-slow mt-8 flex flex-col justify-center items-center">
+        <footer className="fade-in-slow mt-12 flex flex-col justify-center items-center">
             <p className="text-sm absolute bottom-2">
               © 2024 / Evan Kinsey / <Link href="/credits" className="link">Credits</Link>
             </p>

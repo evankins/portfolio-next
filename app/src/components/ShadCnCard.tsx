@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import Image from 'next/image'
 import { Card } from "@/components/ui/card";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
@@ -37,13 +37,13 @@ export function ProjectCard({ title, color, src, skills }: ProjectCardProps) {
             </ul>
         </div>
         <div className="absolute top-[75px] left-4 w-[180px] text-wrap">
-            <p className="text-sm font-medium text-slate-50">{title}</p>
+            <p className="text-base text-slate-50">{title}</p>
         </div>
         <div className="absolute bottom-4 right-4">
-            <Image src={src} alt={title} width={150} height={150} className="rounded-md" />
+            <Image src={src} alt={title} width={150} height={150} className="rounded-md h-[150px] w-[150px]" />
         </div>
         <div className="absolute bottom-4 left-4">
-            <Button className="bg-slate-50 hover:bg-slate-200 transition duration-300 rounded-md" variant="outline">View Project</Button>
+            {/*<Button className="bg-slate-50 hover:bg-slate-200 transition duration-300 rounded-md" variant="outline">View Project</Button>*/}
         </div>
     </Card>
   );

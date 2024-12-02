@@ -155,22 +155,22 @@ const skillMap: { [name: string]: Skill } = Object.fromEntries(
 const projects: Project[] = [
   {
     title: "An Enterprise Scale system for a K-12 school district",
-    src: "/150.svg",
+    src: "/enterprise.png",
     skills: [ "React", "MongoDB", "Express", "Node.js", "JavaScript", "NoSQL", "Apache", "Ubuntu", "Linux", "Git"].map((name) => skillMap[name]),
   },
   {
     title: "A charity website that funded villains; used by donators, villains, and managers",
-    src: "/150.svg",
+    src: "/charity.png",
     skills: ["Angular", "TypeScript", "Spring Boot", "Java", "Node.js", "JaCoCo", "SonarQube", "Docker", "Trello", "Git"].map((name) => skillMap[name]),
   },
   {
     title: "A back-end system to store Dungeons & Dragons characters",
-    src: "/150.svg",
+    src: "/Twenty_sided_dice.png",
     skills: ["Python", "PostgreSQL", "SQL", "Flask", "Github Actions (CI)", "Git"].map((name) => skillMap[name]),
   },
   {
     title: "A Comic book database application that employed a multitude of software design patterns",
-    src: "/150.svg",
+    src: "/comix.png",
     skills: ["Java", "PostgreSQL", "SQL", "Trello", "Git"].map((name) => skillMap[name]),
   },
 ]
@@ -214,7 +214,7 @@ export default function Experience() {
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center"> 
-      <div className="flex-grow mt-4 relative w-11/12 md:w-[700px] lg:w-[800px]">   
+      <div className="flex-grow mt-4 relative w-11/12 lg:w-[800px]">   
 
         <header>
           <div className="inline-block mt-2">
@@ -260,22 +260,24 @@ export default function Experience() {
               ))
             }
           </ul>
+          <div className="flex flex-col justify-center items-center">
+            <ul className="grid w-[400px] my-4 gap-8 md:grid-cols-2 md:w-[800px]">
+                {filteredProjects.map((project, index) => (
+                  <ProjectCard 
+                  key={project.title} 
+                  color={(colors[index % colors.length])}
+                  title={project.title}
+                  src={project.src}
+                  skills={project.skills}
+                  />
+                ))}
+            </ul>
+          </div>
 
-          <ul className="grid w-[400px] my-4 gap-8 md:grid-cols-2 md:w-[800px]">
-              {filteredProjects.map((project, index) => (
-                <ProjectCard 
-                key={project.title} 
-                color={(colors[index % colors.length])}
-                title={project.title}
-                src={project.src}
-                skills={project.skills}
-                />
-              ))}
-          </ul>
 
         </div>
         
-        <footer className="mt-8 flex flex-col justify-center items-center">
+        <footer className="mt-12 flex flex-col justify-center items-center">
             <p className="text-sm absolute bottom-2">
               © 2024 / Evan Kinsey / <Link href="/credits" className="link">Credits</Link>
             </p>

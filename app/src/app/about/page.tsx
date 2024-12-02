@@ -22,7 +22,7 @@ export default function About() {
           </p>
         </div>
 
-        <footer className="mt-8 flex flex-col justify-center items-center">
+        <footer className="mt-12 flex flex-col justify-center items-center">
             <p className="text-sm absolute bottom-2">
               © 2024 / Evan Kinsey / <Link href="/credits" className="link">Credits</Link>
             </p>
