@@ -260,19 +260,17 @@ export default function Experience() {
               ))
             }
           </ul>
-          <div className="flex flex-col justify-center items-center">
-            <ul className="grid w-[400px] my-4 gap-8 md:grid-cols-2 md:w-[800px]">
-                {filteredProjects.map((project, index) => (
-                  <ProjectCard 
-                  key={project.title} 
-                  color={(colors[index % colors.length])}
-                  title={project.title}
-                  src={project.src}
-                  skills={project.skills}
-                  />
-                ))}
-            </ul>
-          </div>
+          <ul className="flex flex-wrap justify-center items-center gap-4">
+              {filteredProjects.map((project, index) => (
+                <ProjectCard 
+                key={project.title} 
+                color={(colors[index % colors.length])}
+                title={project.title}
+                src={project.src}
+                skills={project.skills}
+                />
+              ))}
+          </ul>
 
 
         </div>
