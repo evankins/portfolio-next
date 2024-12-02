@@ -31,7 +31,7 @@ interface Project {
 const skills: Skill[] = [
   {
     name: "MongoDB",
-    src: "/mongodb-icon.svg",
+    src: "/mongodb-icon-2.svg",
     type: "Database"
   },
   {
@@ -46,7 +46,7 @@ const skills: Skill[] = [
   },
   {
     name: "Node.js",
-    src: "/nodejs.svg",
+    src: "/Font Awesome 5 brands node-js.svg",
     type: "Framework"
   },
   {
@@ -116,7 +116,7 @@ const skills: Skill[] = [
   },
   {
     name: "Trello",
-    src: "/trello.svg",
+    src: "/Antu trello.svg",
     type: "Other",
   },
   {

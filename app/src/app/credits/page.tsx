@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import "@/styles/animations.css";
+import Link from "next/link";
 
 
 export default function Credits() {
@@ -15,8 +16,8 @@ export default function Credits() {
         </header>
 
         <div>
-          <p className="my-4">
-            Credits page in progress!
+          <p className="my-4 text-sm">
+            You can download or view the credits document here: <Link className="link" href="https://docs.google.com/document/d/1yugqlkTeK1zBSXoIZg9V8M21ysLVpSM0OXEmoN_hD0w/edit?usp=sharing">Portfolio Credits</Link>
           </p>
         </div>
 
