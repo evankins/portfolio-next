@@ -14,21 +14,18 @@ interface ProjectCardProps {
 
 export function ProjectCard({ title, color, src, skills }: ProjectCardProps) {
   return (
-    <Card className={"h-[260px] w-[380px] relative " + color}>
+    <Card className={"h-[240px] w-[380px] relative " + color}>
         <div className="m-2">
             <ul className="flex flex-row items-center flex-wrap">
                 {skills.map((skill, index) => (
                     <TooltipProvider key={index} >
                         <Tooltip>
-                            <TooltipTrigger 
-                                className={"m-1 rounded-md p-1 h-[26px]"
-                                    + (skill.color ? " " + skill.color : " bg-white")
-                                    + (skill.src ? " w-[26px]" : "")
-                                }
-                            >
-                                {skill.src && <Image src={skill.src} alt={skill.name + " logo"} height={18} width={18} />}
-                                {!skill.src && <p className="mx-1 text-sm text-slate-50">{skill.name}</p>}
-                            </TooltipTrigger>
+                            {skill.src && 
+                            <TooltipTrigger className="m-1 rounded-md p-1 h-[26px] bg-white w-[26px]" >   
+                                <div className="flex justify-center items-center">
+                                    <Image className="h-4 w-auto" src={skill.src} alt={skill.name + " logo"} height={18} width={18} />
+                                </div>
+                            </TooltipTrigger>}
                             {skill.src &&
                                 <TooltipContent className="bg-white text-sm">
                                     <p className="text-sm">{skill.name}</p>
@@ -39,7 +36,7 @@ export function ProjectCard({ title, color, src, skills }: ProjectCardProps) {
                 ))}
             </ul>
         </div>
-        <div className="absolute top-[95px] left-4 w-[180px] text-wrap">
+        <div className="absolute top-[75px] left-4 w-[180px] text-wrap">
             <p className="text-sm font-medium text-slate-50">{title}</p>
         </div>
         <div className="absolute bottom-4 right-4">

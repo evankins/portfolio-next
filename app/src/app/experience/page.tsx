@@ -80,16 +80,6 @@ const skills: Skill[] = [
     type: "Other"
   },
   {
-    name: "Integration",
-    type: "Keyword",
-    color: "bg-blue-700"
-  },
-  {
-    name: "Deployment",
-    type: "Keyword",
-    color: "bg-green-700"
-  },
-  {
     name: "Angular",
     src: "/Angular_full_color_logo.svg",
     type: "Framework"
@@ -106,7 +96,7 @@ const skills: Skill[] = [
   },
   {
     name: "Java",
-    src: "/Coffee-2346113_in_blue.svg",
+    src: "/Eo_circle_red_letter-j.svg",
     type: "Language",
   },
   {
@@ -154,11 +144,6 @@ const skills: Skill[] = [
     src: "/Octicons-mark-github.svg",
     type: "Other",
   },
-  {
-    name: "Design Patterns",
-    type: "Keyword",
-    color: "bg-blue-700"
-  },
 ]
 
 const skillMap: { [name: string]: Skill } = Object.fromEntries(
@@ -170,7 +155,7 @@ const projects: Project[] = [
   {
     title: "An Enterprise Scale system for a K-12 school district",
     src: "/150.svg",
-    skills: ["MongoDB", "Express", "React", "Node.js", "JavaScript", "Linux", "NoSQL", "Apache", "Ubuntu", "Git", "Integration", "Deployment"].map((name) => skillMap[name]),
+    skills: ["MongoDB", "Express", "React", "Node.js", "JavaScript", "Linux", "NoSQL", "Apache", "Ubuntu", "Git"].map((name) => skillMap[name]),
   },
   {
     title: "A charity website that funded villains; used by donators, villains, and managers",
@@ -185,7 +170,7 @@ const projects: Project[] = [
   {
     title: "A Comic book database application that employed a multitude of software design patterns",
     src: "/150.svg",
-    skills: ["Java", "PostgreSQL", "SQL", "Trello", "Git", "Design Patterns"].map((name) => skillMap[name]),
+    skills: ["Java", "PostgreSQL", "SQL", "Trello", "Git"].map((name) => skillMap[name]),
   },
 ]
 
@@ -257,7 +242,12 @@ export default function Experience() {
                   }
                   onClick={() => handleSkillClick(skill.name)}
                 >
-                  {skill.src && <Image src={skill.src} alt={skill.name + " logo"} width={20} height={20} />}
+
+                  {skill.src && 
+                    <div className="flex justify-center items-center">
+                      <Image className="h-5 w-5" src={skill.src} alt={skill.name + " logo"} height={20} width={20} />
+                    </div>
+                  }
                   {skill.name}
                 </Button>
               ))
