@@ -141,7 +141,7 @@ const skills: Skill[] = [
   },
   {
     name: "Github Actions (CI)",
-    src: "/Octicons-mark-github.svg",
+    src: "/github-actions-seeklogo.svg",
     type: "Other",
   },
 ]
@@ -155,7 +155,7 @@ const projects: Project[] = [
   {
     title: "An Enterprise Scale system for a K-12 school district",
     src: "/150.svg",
-    skills: ["MongoDB", "Express", "React", "Node.js", "JavaScript", "Linux", "NoSQL", "Apache", "Ubuntu", "Git"].map((name) => skillMap[name]),
+    skills: [ "React", "MongoDB", "Express", "Node.js", "JavaScript", "NoSQL", "Apache", "Ubuntu", "Linux", "Git"].map((name) => skillMap[name]),
   },
   {
     title: "A charity website that funded villains; used by donators, villains, and managers",
@@ -179,9 +179,15 @@ export default function Experience() {
   const [selectedSkill, setSelectedSkill] = React.useState<string | null>(null);
   const [filteredSkill, setFilteredSkill] = React.useState<string | null>(null);
   const [filteredProjects, setFilteredProjects] = React.useState(projects);
-  const [filteredSkills, setFilteredSkills] = React.useState(skills);
+  const [filteredSkills, setFilteredSkills] = React.useState(skills.sort((a, b) => a.name.localeCompare(b.name)));
 
   const handleSkillClick = (skill: string) => {
+    // unselect if already selected
+    if (selectedSkill === skill) {
+      setSelectedSkill(null);
+      return;
+    }
+
     setSelectedSkill(skill);
   };
 
