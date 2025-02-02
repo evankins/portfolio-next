@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { Card } from "@/components/ui/card";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { Skill } from "@/app/projects/page";
+import { Portal } from "@radix-ui/react-tooltip";
 
 interface ProjectCardProps {
   title: string,
@@ -27,9 +28,11 @@ export function ProjectCard({ title, color, src, skills }: ProjectCardProps) {
                                 </div>
                             </TooltipTrigger>}
                             {skill.src &&
-                                <TooltipContent className="bg-white text-sm">
-                                    <p className="text-sm">{skill.name}</p>
-                                </TooltipContent>
+                                <Portal>
+                                    <TooltipContent className="bg-white text-sm">
+                                        <p className="text-sm">{skill.name}</p>
+                                    </TooltipContent>
+                                </Portal>
                             }
                         </Tooltip>
                     </TooltipProvider>

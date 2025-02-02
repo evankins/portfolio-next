@@ -35,11 +35,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="h-0 flex flex-col justify-center items-center">
-          <div className="flex-grow mt-4 relative w-11/12 md:w-[700px] lg:w-[800px] move-down-fast">
-            <div className="absolute top-0 right-0 hidden md:block">
+          <div className="flex-grow mt-4 relative w-11/12 md:w-[700px] lg:w-[800px] move-down-fast container">
+            <div className="absolute top-2 right-2 hidden md:block">
               <ShadCnNavigationMenuDesktop />
             </div>
-            <div className="absolute top-0 right-0 block md:hidden">
+            <div className="absolute top-2 right-0 block md:hidden">
               <ShadCnNavigationMenuMobile />
             </div>
           </div>
