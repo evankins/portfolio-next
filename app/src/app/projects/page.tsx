@@ -155,25 +155,20 @@ const skillMap: { [name: string]: Skill } = Object.fromEntries(
 
 const projects: Project[] = [
   {
-    title: "An Enterprise Scale system for a K-12 school district",
+    title: "Enterprise K-12 Website",
     src: "/enterprise.png",
     skills: [ "React", "MongoDB", "Express", "Node.js", "JavaScript", "NoSQL", "Apache", "Ubuntu", "Linux", "Git"].map((name) => skillMap[name]),
   },
   {
-    title: "A charity website that funded villains; used by donators, villains, and managers",
+    title: "Money for Maniacs",
     src: "/charity.png",
     skills: ["Angular", "TypeScript", "Spring Boot", "Java", "Node.js", "JaCoCo", "SonarQube", "Docker", "Trello", "Git"].map((name) => skillMap[name]),
   },
   {
-    title: "A back-end system to store Dungeons & Dragons characters",
-    src: "/Twenty_sided_dice.png",
+    title: "Dungeons and Dragons API",
+    src: "/dnd_api.png",
     skills: ["Python", "PostgreSQL", "SQL", "Flask", "Github Actions (CI)", "Git"].map((name) => skillMap[name]),
-  },
-  {
-    title: "A Comic book database application that employed a multitude of software design patterns",
-    src: "/comix.png",
-    skills: ["Java", "PostgreSQL", "SQL", "SonarQube", "Trello", "Git"].map((name) => skillMap[name]),
-  },
+  }
 ]
 
 
