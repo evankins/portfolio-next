@@ -58,14 +58,6 @@ export default function Home() {
             I specialize in making the complex simple. Whether it&apos;s making <b>robust applications</b> or <b>powerful data visualizations</b>, I prioritize finding elegant solutions.
           </p>
 
-          <p className="my-8">
-            To read more about me and my work ethic, you can head to my <a href="/about" className="link">About Me</a> page.
-          </p>
-
-          <p className="my-8">
-            To see my skills and completed projects, you can head to my <a href="/experience" className="link">Experience</a> page.
-          </p>
-
         </div>
 
         <footer className="fade-in-slow mt-12 flex flex-col justify-center items-center">

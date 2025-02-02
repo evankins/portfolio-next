@@ -38,20 +38,20 @@ export function ShadCnNavigationMenuMobile() {
             <li>
               <NavigationMenuLink as-child>
                 <Link
-                  href="/experience"
+                  href="/work"
                   className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                 >
-                  <div className="text-sm font-medium leading-none">Experience</div>
+                  <div className="text-sm font-medium leading-none">Work</div>
                 </Link>
               </NavigationMenuLink>
             </li>
             <li>
               <NavigationMenuLink as-child>
                 <Link
-                  href="/about"
+                  href="/projects"
                   className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                 >
-                  <div className="text-sm font-medium leading-none">About Me</div>
+                  <div className="text-sm font-medium leading-none">Projects</div>
                 </Link>
               </NavigationMenuLink>
             </li>

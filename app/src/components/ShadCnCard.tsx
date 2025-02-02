@@ -3,7 +3,7 @@ import * as React from "react";
 import Image from 'next/image'
 import { Card } from "@/components/ui/card";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { Skill } from "@/app/experience/page";
+import { Skill } from "@/app/projects/page";
 
 interface ProjectCardProps {
   title: string,

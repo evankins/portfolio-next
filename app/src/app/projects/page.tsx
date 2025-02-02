@@ -176,7 +176,7 @@ const projects: Project[] = [
 ]
 
 
-export default function Experience() {
+export default function Projects() {
   const [selectedSkill, setSelectedSkill] = React.useState<string | null>(null);
   const [filteredSkill, setFilteredSkill] = React.useState<string | null>(null);
   const [filteredProjects, setFilteredProjects] = React.useState(projects);
@@ -218,7 +218,7 @@ export default function Experience() {
 
         <header>
           <div className="inline-block mt-2">
-            <h1 className="">Experience</h1>
+            <h1 className="">Projects</h1>
             <hr className="border-t-2 border-black mt-2 w-[115%]" />
           </div>
         </header>
