@@ -35,7 +35,7 @@ export function ShadCnNavigationMenuMobile() {
                 </Link>
               </NavigationMenuLink>
             </li>
-            <li>
+            {/*<li>
               <NavigationMenuLink as-child>
                 <Link
                   href="/work"
@@ -44,7 +44,7 @@ export function ShadCnNavigationMenuMobile() {
                   <div className="text-sm font-medium leading-none">Work</div>
                 </Link>
               </NavigationMenuLink>
-            </li>
+            </li>*/}
             <li>
               <NavigationMenuLink as-child>
                 <Link
