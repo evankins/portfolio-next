@@ -24,17 +24,17 @@ export function ShadCnNavigationMenuDesktop() {
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        <NavigationMenuItem className="hover:bg-slate-200 transition duration-300 rounded-md">
-          <Link href="/experience" legacyBehavior passHref>
+        {/*<NavigationMenuItem className="hover:bg-slate-200 transition duration-300 rounded-md">
+          <Link href="/work" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Experience
+              Work
             </NavigationMenuLink>
           </Link>
-        </NavigationMenuItem>
+        </NavigationMenuItem>*/}
         <NavigationMenuItem className="hover:bg-slate-200 transition duration-300 rounded-md">
-          <Link href="/about" legacyBehavior passHref>
+          <Link href="/projects" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              About Me
+              Projects
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>

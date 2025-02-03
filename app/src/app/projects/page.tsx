@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import Image from 'next/image';
 import Link from 'next/link';
 import * as React from "react";
+import { RevealFx } from "@/once-ui/components/RevealFx";
 
 const colors = [
   "bg-blue-500",
@@ -154,33 +155,29 @@ const skillMap: { [name: string]: Skill } = Object.fromEntries(
 
 const projects: Project[] = [
   {
-    title: "An Enterprise Scale system for a K-12 school district",
+    title: "Enterprise K-12 Website",
     src: "/enterprise.png",
     skills: [ "React", "MongoDB", "Express", "Node.js", "JavaScript", "NoSQL", "Apache", "Ubuntu", "Linux", "Git"].map((name) => skillMap[name]),
   },
   {
-    title: "A charity website that funded villains; used by donators, villains, and managers",
+    title: "Money for Maniacs",
     src: "/charity.png",
     skills: ["Angular", "TypeScript", "Spring Boot", "Java", "Node.js", "JaCoCo", "SonarQube", "Docker", "Trello", "Git"].map((name) => skillMap[name]),
   },
   {
-    title: "A back-end system to store Dungeons & Dragons characters",
-    src: "/Twenty_sided_dice.png",
+    title: "Dungeons and Dragons API",
+    src: "/dnd_api.png",
     skills: ["Python", "PostgreSQL", "SQL", "Flask", "Github Actions (CI)", "Git"].map((name) => skillMap[name]),
-  },
-  {
-    title: "A Comic book database application that employed a multitude of software design patterns",
-    src: "/comix.png",
-    skills: ["Java", "PostgreSQL", "SQL", "SonarQube", "Trello", "Git"].map((name) => skillMap[name]),
-  },
+  }
 ]
 
 
-export default function Experience() {
+export default function Projects() {
   const [selectedSkill, setSelectedSkill] = React.useState<string | null>(null);
   const [filteredSkill, setFilteredSkill] = React.useState<string | null>(null);
   const [filteredProjects, setFilteredProjects] = React.useState(projects);
   const [filteredSkills, setFilteredSkills] = React.useState(skills.sort((a, b) => a.name.localeCompare(b.name)));
+  const [revealFxKey, setRevealFxKey] = React.useState<string>(JSON.stringify(projects));
 
   const handleSkillClick = (skill: string) => {
     // unselect if already selected
@@ -202,6 +199,7 @@ export default function Experience() {
       ? projects.filter(project => project.skills.some(skill => skill.name === selectedSkill)) 
       : projects;
     setFilteredProjects(newFilteredProjects);
+    setRevealFxKey(JSON.stringify(newFilteredProjects)); // Update the key whenever filteredProjects changes
   }, [selectedSkill]);
 
   React.useEffect(() => {
@@ -213,74 +211,87 @@ export default function Experience() {
   }, [filteredSkill]);
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center"> 
-      <div className="flex-grow mt-4 relative w-11/12 lg:w-[800px]">   
+    <RevealFx
+    speed="fast"
+    delay={0}
+    translateY={0}
+    >
+      <div className="min-h-screen flex flex-col justify-center items-center"> 
+        <div className="flex-grow mt-4 relative w-11/12 lg:w-[800px]">   
 
-        <header>
-          <div className="inline-block mt-2">
-            <h1 className="">Experience</h1>
-            <hr className="border-t-2 border-black mt-2 w-[115%]" />
-          </div>
-        </header>
+          <header>
+            <div className="inline-block mt-2">
+              <h1 className="">Projects</h1>
+              <hr className="border-t-2 border-black mt-2 w-[115%]" />
+            </div>
+          </header>
 
-        <div>
-          <p className="mt-4">
-          This page displays all of my in-progress and completed projects.
-          </p>
-
-          <p className="my-2">
-          You can select to see projects filtered by language, framework, and other tools.
-          </p>
-
-          <p className="mt-12 mb-2">
-            Filter:
-          </p>
-
-          <FilterSelect onChange={handleFilterSelect} />
-
-          <ul className="my-4 flex flex-wrap md:w-[800px]">
-            {
-              filteredSkills.map((skill) => (
-                <Button 
-                  key={skill.name}
-                  className={
-                    "bg-white shadow-md m-1 text-sm hover:bg-slate-200 transition duration-300 rounded-md" 
-                    + (skill.name === selectedSkill ? " bg-slate-200" : "")
-                  }
-                  onClick={() => handleSkillClick(skill.name)}
-                >
-
-                  {skill.src && 
-                    <div className="flex justify-center items-center">
-                      <Image className="h-5 w-5" src={skill.src} alt={skill.name + " logo"} height={20} width={20} />
-                    </div>
-                  }
-                  {skill.name}
-                </Button>
-              ))
-            }
-          </ul>
-          <ul className="flex flex-wrap justify-center items-center gap-4">
-              {filteredProjects.map((project, index) => (
-                <ProjectCard 
-                key={project.title} 
-                color={(colors[index % colors.length])}
-                title={project.title}
-                src={project.src}
-                skills={project.skills}
-                />
-              ))}
-          </ul>
-
-
-        </div>
-        
-        <footer className="mt-12 flex flex-col justify-center items-center">
-            <p className="text-sm absolute bottom-2">
-              © 2024 / Evan Kinsey / <Link href="https://github.com/evankins" className="link">GitHub</Link> / <Link href="https://www.linkedin.com/in/evan-kinsey/" className="link">LinkedIn</Link> / <Link href="/credits" className="link">Credits</Link>
+          <div>
+            <p className="mt-4">
+            This page displays all of my in-progress and completed projects.
             </p>
-        </footer>
-      </div>
-    </div>   
+
+            <p className="my-2">
+            You can select to see projects filtered by language, framework, and other tools.
+            </p>
+
+            <p className="mt-12 mb-2">
+              Filter:
+            </p>
+
+            <FilterSelect onChange={handleFilterSelect} />
+
+            <ul className="my-4 flex flex-wrap md:w-[800px]">
+              {
+                filteredSkills.map((skill) => (
+                  <Button 
+                    key={skill.name}
+                    className={
+                      "bg-white shadow-md m-1 text-sm hover:bg-slate-200 transition duration-300 rounded-md" 
+                      + (skill.name === selectedSkill ? " bg-slate-200" : "")
+                    }
+                    onClick={() => handleSkillClick(skill.name)}
+                  >
+
+                    {skill.src && 
+                      <div className="flex justify-center items-center">
+                        <Image className="h-5 w-5" src={skill.src} alt={skill.name + " logo"} height={20} width={20} />
+                      </div>
+                    }
+                    {skill.name}
+                  </Button>
+                ))
+              }
+            </ul>
+            <RevealFx
+              key={revealFxKey}
+              speed="fast"
+              delay={0}
+              translateY={0}
+            >
+              <ul className="flex flex-wrap justify-center items-center gap-4">
+                  {filteredProjects.map((project, index) => (
+                    <ProjectCard 
+                      key={project.title} 
+                      color={(colors[index % colors.length])}
+                      title={project.title}
+                      src={project.src}
+                      skills={project.skills}
+                    />
+                  ))}
+              </ul>
+            </RevealFx>
+
+
+          </div>
+          
+          <footer className="mt-12 flex flex-col justify-center items-center">
+              <p className="text-sm absolute bottom-2">
+                © 2024 / Evan Kinsey / <Link href="https://github.com/evankins" className="link">GitHub</Link> / <Link href="https://www.linkedin.com/in/evan-kinsey/" className="link">LinkedIn</Link> / <Link href="/credits" className="link">Credits</Link>
+              </p>
+          </footer>
+        </div>
+      </div>   
+    </RevealFx>
   );
 }
